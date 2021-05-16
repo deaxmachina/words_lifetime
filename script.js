@@ -17,7 +17,7 @@ const path1 = `
 // various number we will use 
 const numWordsPerHPBook = 154881;
 
-const avgLifeExpectacy = 80;
+const avgLifeExpectacy = 79;
 const avgWordsPerMin = 135; // between 120 and 150 so we take the avg 
 const hoursSpeakPerDay = 1; // take low estimate of 1 hour 
 const avgWordsPerYear = 365*hoursSpeakPerDay*60*avgWordsPerMin; // assuming 1 hour of speaking per day
@@ -53,6 +53,7 @@ svg = d3.select("svg")
   .attr("width", width)
   .attr("height", height)
   .style("background", lightColour)
+  .style("overflow", 'visible')
 
 /// wrapper group for the whole spiral ///
 const gSpiral = svg.append("g")
@@ -343,19 +344,15 @@ function changeNumberAge() {
 }
 
 
-
-
-
 /// Simple title animation ///
-const anim = gsap.from('.article-title', {
+const anim = gsap.from('.speech-bubbles', {
   //height: 0,
-  yPercent: -100,
-  duration: 1,
+  yPercent: -300,
+  duration: 2,
   ease: 'power.3.out',
 });
 
-
 window.addEventListener('resize', () => { 
-  console.log('resized')
   anim.kill().restart().play();
 });
+

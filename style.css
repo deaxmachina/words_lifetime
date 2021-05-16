@@ -7,6 +7,7 @@
 
 :root {
   --purpleColour: #565264;
+  --pinkColor: #805880;
   --lightBlueColour: #70a0af;
   --darkBlueColour: #70a0af;
   --lightColour: #e8e9ed;
@@ -22,7 +23,11 @@ body, * {
   margin: 0;
   font-family: 'Ubuntu', sans-serif;
 }
-/* text in the body of the article */
+
+
+/*********************************************/
+/************ Body of the article ************/
+/*********************************************/
 .article-text {
   width: 55%;
   min-width: 280px;
@@ -32,28 +37,24 @@ body, * {
   color: var(--darkColour);
   position: relative;
 }
-
 .article-body {
   font-size: 16px;
   column-count: 2;
 }
-
 .article-title {
   margin: 60px auto 40px auto;
   text-align: left;
   font-size: 55px;
   color: var(--lightColour);
   background-color: var(--lightBlueColour);
-  background: linear-gradient(45deg, var(--lightBlueColour), #805880);
+  background: linear-gradient(45deg, var(--lightBlueColour), var(--pinkColor));
   padding: 0px 60px 10px 10px;
   font-family: 'Inconsolata', monospace;
   border-radius: 5px;
 }
-
 .article-subtitle {
   text-align: center;
 }
-
 .speech-bubbles {
   color: var(--lightColour);
   font-size: 50px;
@@ -61,7 +62,6 @@ body, * {
   top: 20px;
   right: 10px;
 }
-
 .scroll-down {
   margin: auto;
   margin-top: 30px;
@@ -69,10 +69,13 @@ body, * {
   width: 200px;
   padding: 10px;
   font-weight: bold;
+  color: var(--pinkColor);
 }
 
 
-/* container for both the graph and boxes */
+/*********************************************/
+/************** Graph and Steps **************/
+/*********************************************/
 .wrapper {
   margin: auto;
   position: relative;
@@ -81,7 +84,6 @@ body, * {
 /* SVG chart */
 figure {
   width: 100%;
-  border: 0px solid black;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -99,7 +101,7 @@ svg {
   padding: 35px;
   margin-bottom: 100vh; /* this is how you give each step more height */
   background-color: #70a0af;
-  color: white;
+  color: var(--lightColour);
   z-index: 10;
   opacity: 1;
   line-height: 1.5;
@@ -114,7 +116,7 @@ svg {
 }
 /* reduce the bottom margin of just the last step */
 .step:last-of-type {
-  margin-bottom: 200px;
+  margin-bottom: 120px;
 }
 
 .word {
@@ -164,18 +166,18 @@ svg {
 }
 
 /*********************************************/
+/*********** various elements ****************/
+/*********************************************/
 .link, .link:visited {
   color: var(--lightBlueColour);
   text-decoration: none;
   border-bottom: 2px solid var(--lightBlueColour);
   transition: 0.3s ease;
 }
-
 .link:hover, .link:active {
   color: var(--lightColour);
   background-color: var(--lightBlueColour);
 }
-
 .link-blue {
   color: inherit;
   text-decoration: none;
@@ -186,10 +188,60 @@ svg {
   background-color: var(--lightColour);
   color: var(--lightBlueColour);
 }
-
 .bold {
   font-weight: 700;
 }
+
+
+/***************************************/
+
+#vocabulary-graph-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#vocabulary-graph-wrapper svg {
+  margin: auto;
+  text-align: center;
+}
+
+
+@media(max-width: 1030px) {
+  .article-text {
+    width: 75%;
+  }
+  .article-title {
+    text-align: left;
+    font-size: 40px;
+    padding: 0px 60px 10px 10px;
+  }
+  .step {
+    width: 40%;
+    margin-left: 55%;
+    margin-right: 5%;
+    background-color: #70a0afda;
+  }
+  #step-4 {
+    background-color: #e8e9edde;
+    color: var(--darkColour);
+  }
+}
+
+@media(max-width: 650px) {
+  .article-text {
+    width: 80%;
+  }
+  .article-body {
+    column-count: 1;
+  }
+}
+
+@media(max-width: 500px) {
+  .article-text {
+    width: 87%;
+  }
+}
+
 
 
 
