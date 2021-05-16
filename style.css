@@ -118,23 +118,19 @@ svg {
 .step:last-of-type {
   margin-bottom: 120px;
 }
-
+/* words in the little word cloud */
 .word {
   fill: var(--lightBlueColour);
   font-size: 40px;
-  /*font-family: 'Itim', cursive;*/
   font-family: 'Gloria Hallelujah', cursive;
   text-anchor: middle;
 }
-
-
-
-
 
 .step-4-text {
   margin-bottom: 20px;
 }
 
+/* stats in the last step */
 .stats-container {
   display: flex;
   align-items: center;
@@ -165,6 +161,7 @@ svg {
   font-family: 'Inconsolata', monospace;
 }
 
+
 /*********************************************/
 /*********** various elements ****************/
 /*********************************************/
@@ -193,19 +190,9 @@ svg {
 }
 
 
-/***************************************/
-
-#vocabulary-graph-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-#vocabulary-graph-wrapper svg {
-  margin: auto;
-  text-align: center;
-}
-
-
+/*********************************************/
+/************* Media Queries *****************/
+/*********************************************/
 @media(max-width: 1030px) {
   .article-text {
     width: 75%;

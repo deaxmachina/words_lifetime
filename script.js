@@ -49,7 +49,7 @@ const lightColour = "#e8e9ed"
 const darkColour = "#1e1d25"
 
 /// Draw the SVG ///
-svg = d3.select("svg")
+const svg = d3.select("svg")
   .attr("width", width)
   .attr("height", height)
   .style("background", lightColour)
@@ -61,8 +61,7 @@ const gSpiral = svg.append("g")
   .attr("transform", `translate(${width/2}, ${height/2})`)
 
 /// wrapper group for the whole wordcloud ///
-const gWords = svg.append("g")
-  .classed("words-wrapper-g", true)
+const gWords = svg.append("g").classed("words-wrapper-g", true)
 
 /// data - array with as many elements as the total number of books ///
 const data = Array.from({ length: totalNumBooks }, (_, i) => ({value: i, number: i*2}))
@@ -157,7 +156,6 @@ const wordcloud = gWords
 ///////////////////////////////////////////////////////////////////////
 //////////////////////////// Animation ////////////////////////////////
 ///////////////////////////////////////////////////////////////////////
-
 
 // This pins the SVG chart wrapper when it hits the center of the viewport the first time we start scrolling 
 // and then releases the pin when the final textbox meets the bottom of the chart 
@@ -343,8 +341,9 @@ function changeNumberAge() {
   numbersAge.innerHTML = (numAge.var).toFixed()
 }
 
-
-/// Simple title animation ///
+///////////////////////////////
+/// Simple title animation ////
+///////////////////////////////
 const anim = gsap.from('.speech-bubbles', {
   //height: 0,
   yPercent: -300,
@@ -355,4 +354,3 @@ const anim = gsap.from('.speech-bubbles', {
 window.addEventListener('resize', () => { 
   anim.kill().restart().play();
 });
-
